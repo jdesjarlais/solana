@@ -3093,7 +3093,7 @@ mod tests {
                 aligned: true,
                 allocator: BpfAllocator::new(heap, ebpf::MM_HEAP_START),
             };
-            for _ in 0..12 {
+            for _ in 0..6 {
                 let mut result: Result<u64, EbpfError<BpfError>> = Ok(0);
                 syscall.call(1, 0, 0, 0, 0, &memory_mapping, &mut result);
                 assert_ne!(result.unwrap(), 0);
